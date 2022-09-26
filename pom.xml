@@ -6,11 +6,17 @@
     
     <groupId>com.scarecrow</groupId>
     <artifactId>practice</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>concurrent</module>
+    </modules>
     
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <!-- 通过属性而非插件指定配置 http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 </project>
