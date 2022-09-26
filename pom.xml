@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>concurrent</module>
+        <module>spring-xml</module>
+        <module>spring-config</module>
+        <module>spring-common</module>
     </modules>
     
     <properties>
@@ -17,6 +20,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <!-- 通过属性而非插件指定配置 http://maven.apache.org/plugins/maven-compiler-plugin/compile-mojo.html -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>5.2.12.RELEASE</spring.version>
+        <springboot.version>5.2.12.RELEASE</springboot.version>
     </properties>
 
 </project>
