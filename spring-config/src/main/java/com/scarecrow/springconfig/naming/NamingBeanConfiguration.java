@@ -1,6 +1,6 @@
-package com.scarecrow.springconfig;
+package com.scarecrow.springconfig.naming;
 
-import com.scarecrow.bean.TestBean;
+import com.scarecrow.bean.naming.TestBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2022/9/26 20:01
  */
 @Configuration
-public class TestJavaConfiguration {
+public class NamingBeanConfiguration {
 
     @Bean
     public TestBean testBean() {

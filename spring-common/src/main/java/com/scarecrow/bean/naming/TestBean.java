@@ -1,4 +1,4 @@
-package com.scarecrow.bean;
+package com.scarecrow.bean.naming;
 
 /**
  * @author wangbo
