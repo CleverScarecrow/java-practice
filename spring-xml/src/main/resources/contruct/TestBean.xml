@@ -28,6 +28,8 @@
             <constructor-arg name="thingThree" ref="beanThree"/>
             <constructor-arg name="four" value="four"/>
             <constructor-arg name="five" value="five"/>
+<!--            setter注入-->
+            <property name="test" value="test"/>
         </bean>
         
         <bean id="beanTwo" class="com.scarecrow.xml.construct.ThingTwo"/>
