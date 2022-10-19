@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <beans>
+        <bean id="beanOne" class="com.scarecrow.xml.construct.ThingOne">
+<!--            构造函数参数解析-->
+<!--            <constructor-arg ref="beanTwo"/>-->
+<!--            <constructor-arg value="four"/>-->
+<!--            <constructor-arg value="five"/>-->
+<!--            <constructor-arg ref="beanThree"/>-->
+
+<!--            构造函数参数类型匹配-->
+<!--            <constructor-arg type="java.lang.String" value="four"/>-->
+<!--            <constructor-arg type="com.scarecrow.xml.construct.ThingThree" ref="beanThree"/>-->
+<!--            <constructor-arg type="com.scarecrow.xml.construct.ThingTwo" ref="beanTwo"/>-->
+<!--            <constructor-arg type="java.lang.String" value="five"/>-->
+
+<!--            构造函数参数索引-->
+<!--            <constructor-arg index="0" ref="beanTwo"/>-->
+<!--            <constructor-arg index="1" ref="beanThree"/>-->
+<!--            <constructor-arg index="2" value="four"/>-->
+<!--            <constructor-arg index="3" value="five"/>-->
+
+<!--            构造函数参数名称-->
+            <constructor-arg name="thingTwo" ref="beanTwo"/>
+            <constructor-arg name="thingThree" ref="beanThree"/>
+            <constructor-arg name="four" value="four"/>
+            <constructor-arg name="five" value="five"/>
+        </bean>
+        
+        <bean id="beanTwo" class="com.scarecrow.xml.construct.ThingTwo"/>
+        
+        <bean id="beanThree" class="com.scarecrow.xml.construct.ThingThree"/>
+    </beans>
+</beans>
