@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="outerBean" name="testBean" class="com.scarecrow.xml.inner.OuterBean">
+        <property name="desc" value="outerBean"/>
+        <property name="innerBean">
+            <bean class="com.scarecrow.xml.inner.InnerBean" destroy-method="destroy">
+                <property name="desc" value="innerBean"/>
+            </bean>
+        </property>
+    </bean>
+</beans>
