@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="lazyBean" class="com.scarecrow.xml.lazy.LazyBean" lazy-init="true">
+        <property name="desc" value="lazyBean"/>
+    </bean>
+    
+    
+    <!--NotLazyBean依赖LazyBean,LazyBean无法实现延迟初始化-->
+    <bean id="notLazyBean" class="com.scarecrow.xml.lazy.NotLazyBean">
+        <property name="desc" value="notLazyBean"/>
+        <property name="lazyBean" ref="lazyBean"/>
+    </bean>
+    
+</beans>
