@@ -6,13 +6,18 @@
     <bean id="secondAutowireBean1" name="secondAutowireBean" class="com.scarecrow.xml.autowiring.SecondAutowireBean">
         <property name="desc" value="SecondAutowireBean"/>
     </bean>
-    
-    <bean id="thirdAutowireBean" class="com.scarecrow.xml.autowiring.ThirdAutowireBean">
+    <!--    autowire-candidate设置为false byType不会查找此bean,但不影响byName根据名称自动装配 -->
+    <bean id="thirdAutowireBean" class="com.scarecrow.xml.autowiring.ThirdAutowireBean" autowire-candidate="false">
         <property name="desc" value="ThirdAutowireBean"/>
     </bean>
     
-    <bean id="thirdAutowireBeanOther" class="com.scarecrow.xml.autowiring.ThirdAutowireBean" autowire-candidate="false">
+    <bean id="thirdAutowireBeanOther" class="com.scarecrow.xml.autowiring.ThirdAutowireBean">
         <property name="desc" value="thirdAutowireBeanOther"/>
+    </bean>
+    
+    <!--    primary="true" 根据类型自动化装配，当有多个相同类型的Bean.优先使用primary="true"的Bean-->
+    <bean id="thirdAutowireBeanPrimary" class="com.scarecrow.xml.autowiring.ThirdAutowireBean" primary="true">
+        <property name="desc" value="thirdAutowireBeanPrimary"/>
     </bean>
     
     <!--    byName bean的name必须与类的字段名称一样    -->
@@ -20,7 +25,7 @@
     <!--    constructor 构造函数参数类型的bean缺失一个都会异常    -->
     <bean id="firstAutowireBean" class="com.scarecrow.xml.autowiring.FirstAutowireBean" autowire="byType">
         <!--    显式依赖项总是覆盖自动装配-->
-        <property name="thirdAutowireBean" ref="thirdAutowireBeanOther"/>
+<!--        <property name="thirdAutowireBean" ref="thirdAutowireBean"/>-->
     </bean>
     
     <bean id="testStringBean" class="java.lang.String">
