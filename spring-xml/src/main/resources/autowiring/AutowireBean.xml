@@ -11,15 +11,16 @@
         <property name="desc" value="ThirdAutowireBean"/>
     </bean>
     
-<!--    <bean id="thirdAutowireBeanOther" class="com.scarecrow.xml.autowiring.ThirdAutowireBean">-->
-<!--        <property name="desc" value="thirdAutowireBeanOther"/>-->
-<!--    </bean>-->
+    <bean id="thirdAutowireBeanOther" class="com.scarecrow.xml.autowiring.ThirdAutowireBean" autowire-candidate="false">
+        <property name="desc" value="thirdAutowireBeanOther"/>
+    </bean>
     
     <!--    byName bean的name必须与类的字段名称一样    -->
-    <!--    byType 同一个类型的bean类型只能有一个   map、collection、array 可以根据类型自动匹配，String不可以 -->
+    <!--    byType 同一个类型的bean类型只能有一个   map、collection、array 可以根据类型自动匹配，String不可以  Strings, and Classes (and arrays of such simple properties) -->
     <!--    constructor 构造函数参数类型的bean缺失一个都会异常    -->
     <bean id="firstAutowireBean" class="com.scarecrow.xml.autowiring.FirstAutowireBean" autowire="byType">
-    
+        <!--    显式依赖项总是覆盖自动装配-->
+        <property name="thirdAutowireBean" ref="thirdAutowireBeanOther"/>
     </bean>
     
     <bean id="testStringBean" class="java.lang.String">
