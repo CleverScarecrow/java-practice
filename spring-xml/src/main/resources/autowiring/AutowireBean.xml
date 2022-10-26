@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="secondAutowireBean1" name="secondAutowireBean" class="com.scarecrow.xml.autowiring.SecondAutowireBean">
+        <property name="desc" value="SecondAutowireBean"/>
+    </bean>
+    
+    <bean id="thirdAutowireBean" class="com.scarecrow.xml.autowiring.ThirdAutowireBean">
+        <property name="desc" value="ThirdAutowireBean"/>
+    </bean>
+    
+<!--    <bean id="thirdAutowireBeanOther" class="com.scarecrow.xml.autowiring.ThirdAutowireBean">-->
+<!--        <property name="desc" value="thirdAutowireBeanOther"/>-->
+<!--    </bean>-->
+    
+    <!--    byName bean的name必须与类的字段名称一样    -->
+    <!--    byType 同一个类型的bean类型只能有一个    -->
+    <!--    constructor 构造函数参数类型的bean缺失一个都会异常    -->
+    <bean id="firstAutowireBean" class="com.scarecrow.xml.autowiring.FirstAutowireBean" autowire="constructor">
+    
+    </bean>
+    
+    <bean id="testStringBean" class="java.lang.String">
+        <constructor-arg index="0" value="testStringBean"/>
+    </bean>
+    
+</beans>
