@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    
+    <!--    default-autowire-candidates 默认自动装配候选者，未指定的Name Bean 不会作为候选者被自动装配-->
     <bean id="secondAutowireBean1" name="secondAutowireBean" class="com.scarecrow.xml.autowiring.SecondAutowireBean">
         <property name="desc" value="SecondAutowireBean"/>
     </bean>
