@@ -16,14 +16,33 @@
 <!--    </bean>-->
     
     <!--    byName bean的name必须与类的字段名称一样    -->
-    <!--    byType 同一个类型的bean类型只能有一个    -->
+    <!--    byType 同一个类型的bean类型只能有一个   map、collection、array 可以根据类型自动匹配，String不可以 -->
     <!--    constructor 构造函数参数类型的bean缺失一个都会异常    -->
-    <bean id="firstAutowireBean" class="com.scarecrow.xml.autowiring.FirstAutowireBean" autowire="constructor">
+    <bean id="firstAutowireBean" class="com.scarecrow.xml.autowiring.FirstAutowireBean" autowire="byType">
     
     </bean>
     
     <bean id="testStringBean" class="java.lang.String">
         <constructor-arg index="0" value="testStringBean"/>
+    </bean>
+    
+    <bean id="list" class="java.util.ArrayList">
+        <constructor-arg index="0">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="map" class="java.util.HashMap">
+        <constructor-arg index="0">
+            <map>
+                <entry key="1" value="1"/>
+                <entry key="2" value="2"/>
+            </map>
+        </constructor-arg>
     </bean>
     
 </beans>
