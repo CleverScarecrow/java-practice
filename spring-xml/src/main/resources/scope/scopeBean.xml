@@ -6,6 +6,7 @@
     <!--    scope 默认default为singleton-->
     <bean id="singletonBean" class="com.scarecrow.xml.scope.SingletonBean" scope="singleton">
         <property name="desc" value="单例Bean"/>
+        <property name="prototypeBean" ref="prototypeBean"/>
     </bean>
 
     <bean id="prototypeBean" class="com.scarecrow.xml.scope.PrototypeBean" scope="prototype">
