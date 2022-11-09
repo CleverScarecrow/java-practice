@@ -1,5 +1,6 @@
 package com.scarecrow.xml.scope;
 
+import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;
 
@@ -11,7 +12,8 @@ import org.springframework.util.Assert;
  */
 public class TestScopeBean {
 
-    public static void main(String[] args) {
+    @Test
+    public void test1() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("scope/scopeBean.xml");
         SingletonBean singletonBean1 = applicationContext.getBean("singletonBean1", SingletonBean.class);
         SingletonBean singletonBean1_1 = applicationContext.getBean("singletonBean1", SingletonBean.class);
@@ -22,7 +24,12 @@ public class TestScopeBean {
         PrototypeBean prototypeBean = applicationContext.getBean(PrototypeBean.class);
         PrototypeBean prototypeBean1 = applicationContext.getBean(PrototypeBean.class);
         Assert.isTrue(prototypeBean != prototypeBean1, "原型bean不相同");
-        // todo 原型Bean的生命周期
+    }
+
+    @Test
+    public void prototypeBeanLifeCycle() {
+        // 原型Bean的生命周期
+
 
 
     }
