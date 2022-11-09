@@ -13,10 +13,12 @@ public class TestScopeBean {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("scope/scopeBean.xml");
-        SingletonBean singletonBean = applicationContext.getBean(SingletonBean.class);
-        SingletonBean singletonBean1 = applicationContext.getBean(SingletonBean.class);
-        Assert.isTrue(singletonBean == singletonBean1, "单例Bean形同");
-        Assert.isTrue(singletonBean.getPrototypeBean() == singletonBean1.getPrototypeBean(), "单例Bean 注入的原型Bean也是形同");
+        SingletonBean singletonBean1 = applicationContext.getBean("singletonBean1", SingletonBean.class);
+        SingletonBean singletonBean1_1 = applicationContext.getBean("singletonBean1", SingletonBean.class);
+        SingletonBean singletonBean2 = applicationContext.getBean("singletonBean2",SingletonBean.class);
+        Assert.isTrue(singletonBean1 == singletonBean1_1, "单例Bean形同");
+        Assert.isTrue(singletonBean1.getPrototypeBean() == singletonBean1_1.getPrototypeBean(), "单例Bean 注入的原型Bean也是相同");
+        Assert.isTrue(singletonBean1.getPrototypeBean() != singletonBean2.getPrototypeBean(), "不同的单例Bean 注入的原型Bean也不相同");
         PrototypeBean prototypeBean = applicationContext.getBean(PrototypeBean.class);
         PrototypeBean prototypeBean1 = applicationContext.getBean(PrototypeBean.class);
         Assert.isTrue(prototypeBean != prototypeBean1, "原型bean不相同");

@@ -4,8 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--    scope 默认default为singleton-->
-    <bean id="singletonBean" class="com.scarecrow.xml.scope.SingletonBean" scope="singleton">
-        <property name="desc" value="单例Bean"/>
+    <bean id="singletonBean1" class="com.scarecrow.xml.scope.SingletonBean" scope="singleton">
+        <property name="desc" value="单例Bean1"/>
+        <property name="prototypeBean" ref="prototypeBean"/>
+    </bean>
+
+    <bean id="singletonBean2" class="com.scarecrow.xml.scope.SingletonBean" scope="singleton">
+        <property name="desc" value="单例Bean2"/>
         <property name="prototypeBean" ref="prototypeBean"/>
     </bean>
 
