@@ -14,6 +14,7 @@
         <module>spring-config</module>
         <module>spring-common</module>
         <module>spring-boot</module>
+        <module>serialization</module>
     </modules>
     
     <properties>
