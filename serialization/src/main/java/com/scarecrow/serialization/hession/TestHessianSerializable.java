@@ -12,6 +12,8 @@ import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
 
 /**
+ * Hessian序列化的对象必须要实现Serializable接口，但可以不需要有serialVersionUID。即使变了也能反序列化成功
+ *
  * @author wangbo
  * @since 2023/6/16 11:03
  */
@@ -27,6 +29,9 @@ public class TestHessianSerializable {
 
         Object deserializeObjectData = deserialize(serializeByteData);
         System.out.println(deserializeObjectData);
+
+        Object deserializeObjectData1 = deserialize("D:\\aa.txt");
+        System.out.println(deserializeObjectData1);
     }
 
     public static <T> byte[] serialize(T obj) throws IOException {
@@ -54,4 +59,13 @@ public class TestHessianSerializable {
         }
     }
 
+    public static <T> Object deserialize(String path) throws IOException {
+        ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(new File(path).toPath()));
+        HessianInput hi = new HessianInput(ois);
+        try {
+            return hi.readObject();
+        } catch (IOException e) {
+            throw new IllegalStateException(e.getMessage(), e);
+        }
+    }
 }

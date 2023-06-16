@@ -24,7 +24,6 @@ public class TestJdkSerializable {
     }
 
     public static void serialize(JdkUser user) throws IOException {
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream os = new ObjectOutputStream(Files.newOutputStream(new File("D:\\a.txt").toPath()));
         os.writeObject(user);
         os.close();
