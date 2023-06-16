@@ -37,6 +37,7 @@ public class TestHessianSerializable {
         } catch (IOException e) {
             throw new IllegalStateException(e.getMessage(), e);
         }
+        // 序列化文件里面包含 class全类名、属性字段类型及名称
         ObjectOutputStream os = new ObjectOutputStream(Files.newOutputStream(new File("D:\\aa.txt").toPath()));
         os.write(bos.toByteArray());
         os.flush();
