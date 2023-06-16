@@ -16,7 +16,7 @@ public class TestJdkSerializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         JdkUser user = new JdkUser();
         user.setUsername("test");
-        user.setPassword("123");
+        user.setPassword(123);
         user.setAddress("beijing");
         serialize(user);
         JdkUser user2 = deserialize();

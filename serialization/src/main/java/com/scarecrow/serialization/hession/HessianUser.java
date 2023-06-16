@@ -1,9 +1,12 @@
-package com.scarecrow.serialization.jdk;
+package com.scarecrow.serialization.hession;
 
 import java.io.Serializable;
 
-public class JdkUser implements Serializable {
-    private static final long serialVersionUID = -4103945617369592690L;
+/**
+ * @author wangbo
+ * @since 2023/6/16 11:02
+ */
+public class HessianUser implements Serializable {
     private String username;
     private Integer password;
     private String address;
