@@ -24,5 +24,12 @@
             <artifactId>hessian</artifactId>
             <version>4.0.66</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.4</version>
+        </dependency>
     </dependencies>
 </project>
